@@ -1100,7 +1100,7 @@
                 <div class="auth-form__container">
                     <div class="auth-form__header">
                         <h3 class="auth-form__heading">Đăng ký</h3>
-                        <span class="auth-form__switch-btn">Đăng nhập</span>
+                        <span class="auth-form__switch-btn js-switch-login">Đăng nhập</span>
                     </div>
 
                     <div class="auth-form__form">
@@ -1149,7 +1149,7 @@
                 <div class="auth-form__container">
                     <div class="auth-form__header">
                         <h3 class="auth-form__heading">Đăng nhập</h3>
-                        <span class="auth-form__switch-btn">Đăng ký</span>
+                        <span class="auth-form__switch-btn js-switch-register">Đăng ký</span>
                     </div>
 
                     <div class="auth-form__form">
@@ -1201,6 +1201,8 @@
         var modalAuthFormLogin = document.querySelector('.js-auth-form-login')
         var modalAuthForms = document.querySelectorAll('.auth-form')
         var modalCloses = document.querySelectorAll('.js-close')
+        var switchLogin = document.querySelector('.js-switch-login')
+        var switchRegister = document.querySelector('.js-switch-register')
 
         registerItem.addEventListener('click', function() {
             modal.classList.add('open')
@@ -1226,6 +1228,15 @@
             })
         }
 
+        switchLogin.onclick = function() {
+            modalAuthFormRegister.classList.remove('open')
+            modalAuthFormLogin.classList.add('open')
+        }
+
+        switchRegister.onclick = function() {
+            modalAuthFormLogin.classList.remove('open')
+            modalAuthFormRegister.classList.add('open')
+        }
     </script>
 </body>
 </html>
